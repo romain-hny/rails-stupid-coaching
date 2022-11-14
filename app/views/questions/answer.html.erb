@@ -1,0 +1,31 @@
+<%# <ul> %>
+  <%# <% @list_of_questions.each do |question| %>
+    <%# <li> %>
+      <%# <%= question %>
+      <%# <br> <i> - You </i> %>
+      <%# <br><br>  %>
+<%= params[:question] %>
+<br><i> - You </i>
+<br><br>
+<%if params[:question] == "I am going to work" %>
+<div class="alert alert-warning">
+  <%= "Great!" %>
+  <br><i>- Your coach</i>
+</div>
+<% elsif params[:question].last == '?' %>
+<div class="alert alert-warning">
+  <%= "Silly question, get dressed and go to work!" %>
+  <br><i>- Your coach</i>
+</div>
+<% else %>
+<div class="alert alert-warning">
+  <%= "I don't care, get dressed and go to work!" %>
+  <br><i>- Your coach</i>
+</div>
+<% end %>
+    <%# </li> %>
+  <%# <% end %>
+<%# </ul> %>
+
+<br><br>
+<%= link_to "ask a new question", ask_path %>
